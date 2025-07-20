@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  background: #fff8f0;
+  font-family: 'Rubik', sans-serif;
+  background-color: var(--sand);
+  color: var(--stone-gray);
+}
+
+header {
+  background-color: #a1764f;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background: url('gulf-food.jpg') center/cover no-repeat;
+  color: white;
+  padding: 5em 2em;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+  background-color: #fbe4c8;
+}
+
+.features div {
+  max-width: 200px;
+  text-align: center;
+}
+
+footer {
+  background-color: #a1764f;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+:root {
+  --lake-blue: #2b7a78;
+  --sand: #f4f1de;
+  --stone-gray: #3a3a3a;
+  --accent-gold: #c99c33;
+}
+
+
+header, footer {
+  background-color: var(--lake-blue);
+  color: white;
+}
+
+.hero {
+  background: url('charvak-hero.jpg') center/cover no-repeat;
+}
+
+.features {
+  background-color: var(--accent-gold);
+  color: white;
+}

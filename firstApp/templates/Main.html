@@ -1,59 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Main</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charvak Delights</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          keyframes: {
-            'fade-in': {
-              '0%':   { opacity: '0' },
-              '100%': { opacity: '1' }
-            },
-            'slide-up': {
-              '0%':   { transform: 'translateY(20px)', opacity: '0' },
-              '100%': { transform: 'translateY(0)',    opacity: '1' }
-            },
-            'gradient-shift': {
-              '0%, 100%': { 'background-position': '0% 50%' },
-              '50%':      { 'background-position': '100% 50%' },
-            }
-          },
-          animation: {
-            'fade-in-slow':    'fade-in 2s ease-out forwards',
-            'slide-up-fast':   'slide-up 0.8s ease-out forwards',
-            'gradient-shift':  'gradient-shift 8s ease infinite',
-          },
-          backgroundSize: {
-            '200%': '200% 200%',
-          }
-        }
-      }
-    }
-  </script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'firstApp/style.css' %}">
+    <!-- In your <head> -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 </head>
-<body class="min-h-screen bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 bg-[length:200%] animate-gradient-shift flex items-center justify-center">
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Reservations</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <div class="text-center px-6 py-12 max-w-2xl bg-white/20 backdrop-blur-md rounded-lg">
-    <h1 class="text-5xl sm:text-6xl font-extrabold text-white mb-4 animate-fade-in-slow">
-      Добро пожаловать!
-    </h1>
-    <p class="text-lg text-white/90 mb-8 animate-slide-up-fast">
-      Приветствую вас на нашем совместном проекте, для оформления внешнего вида будем использовать Tailwind
-    </p>
-    <div class="flex justify-center space-x-4 animate-slide-up-fast" style="animation-delay: 0.5s">
-      <a href="https://tailwindcss.com/"
-         class="px-6 py-3 bg-white text-pink-600 font-semibold rounded-full shadow-lg
-                hover:scale-105 hover:bg-white/90 transition-transform duration-300">
-        Узнать больше
-      </a>
+  <section class="hero">
+      <h1>Welcome to CHARVAK</h1>
+    <h2>Authentic CHARVAK reservoir</h2>
+    <p>Experience the rich flavors of the UZBEK RESERVOIR</p>
+  </section>
+
+  <section class="features">
+    <div>
+      <h3>Signature Dishes</h3>
+      <p>OSH, SHASHLIK, MOSHXORDA & more</p>
     </div>
-  </div>
+    <div>
+      <h3>Elegant Atmosphere</h3>
+      <p>Traditional decor meets modern comfort</p>
+    </div>
+    <div>
+      <h3>Online Booking</h3>
+      <p>Reserve your table with ease</p>
+    </div>
+  </section>
 
+  <footer>
+    <p>&copy; 2025 CHARVAK. All rights reserved.</p>
+  </footer>
 </body>
 </html>
