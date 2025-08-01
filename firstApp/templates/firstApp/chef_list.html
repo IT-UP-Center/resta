@@ -1,0 +1,18 @@
+{% extends 'firstApp/base.html' %}
+{% block content %}
+<section class="grid">
+  <h2>Our Chefs</h2>
+  {% for chef in chefs %}
+    <div class="card">
+      <a href="{% url 'firstApp:chef_detail' chef.pk %}">
+        <div class="card-image">
+          <img src="{{ chef.photo.url }}" alt="{{ chef }}">
+        </div>
+        <div class="card-content">
+          <h4>{{ chef.first_name }} {{ chef.last_name }}</h4>
+        </div>
+      </a>
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}

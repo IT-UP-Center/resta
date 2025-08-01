@@ -1,0 +1,17 @@
+{% extends 'firstApp/base.html' %}
+{% block content %}
+<article>
+  <h2>{{ chef.first_name }} {{ chef.last_name }}</h2>
+  <div class="card-image" style="max-width:400px; margin-bottom:1rem;">
+    <img src="{{ chef.photo.url }}" alt="{{ chef }}">
+  </div>
+  <p>{{ chef.bio }}</p>
+  <p><strong>Contact:</strong> {{ chef.phone_number }}</p>
+  <h3>Foods by {{ chef.first_name }}</h3>
+  <ul>
+    {% for food in chef.foods.all %}
+      <li><a href="{% url 'firstApp:food_detail' food.pk %}">{{ food.name }}</a></li>
+    {% endfor %}
+  </ul>
+</article>
+{% endblock %}
