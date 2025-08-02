@@ -1,76 +1,56 @@
-body {
-  margin: 0;
-  background: #fff8f0;
-  font-family: 'Rubik', sans-serif;
-  background-color: var(--sand);
-  color: var(--stone-gray);
-}
+/* Reset & Base */
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Rubik', sans-serif; background:#f2f2f2; color:#333; }
+a { text-decoration:none; color:inherit; }
 
-header {
-  background-color: #a1764f;
-  color: white;
-  padding: 1em;
-  text-align: center;
-}
+/* Navbar */
+header { position:fixed; top:0; width:100%; background:#111; z-index:100; }
+nav { max-width:1200px; margin:0 auto; padding:1rem; }
+nav ul { display:flex; list-style:none; justify-content:center; gap:2rem; }
+nav a { color:#fff; font-weight:500; transition:color .3s; }
+nav a:hover { color:#e63946; }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
+/* Main Content Offset for Fixed Header */
+main.container { padding-top:70px; max-width:1200px; margin:0 auto; }
+
+/* Grid & Cards */
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:1.5rem; }
+.card { background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,0.1); transition:transform .3s; }
+.card:hover { transform:translateY(-5px); }
+.card a { display:block; }
+.card-image { position:relative; width:100%; padding-top:100%; overflow:hidden; }
+.card-image img { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; }
+.card-content { padding:1rem; text-align:center; }
+.card-content h3, .card-content h4 { margin-bottom:0.5rem; color:#e63946; }
+.card-content p { color:#555; }
+
+/* Detail Sections */
+detail { margin:2rem 0; }
+article img { max-width:400px; width:100%; height:auto; border-radius:8px; margin-bottom:1rem; }
+article h2 { margin-bottom:1rem; color:#e63946; }
+article p { margin-bottom:0.75rem; }
+
+/* Footer */
+footer { background:#111; color:#fff; text-align:center; padding:1rem; margin-top:2rem; }
+
+.hero-main {
   display: flex;
-  justify-content: center;
-  gap: 2em;
+  align-items: center;
+  margin-bottom: 2rem;
 }
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+.hero-info {
+  flex: 3;
+  padding: 1rem;
 }
-
-.hero {
-  background: url('gulf-food.jpg') center/cover no-repeat;
-  color: white;
-  padding: 5em 2em;
-  text-align: center;
+.hero-img {
+  flex: 1;
+  width: 50vw;
+  height: 50vh;
+  overflow: hidden;
 }
-
-.features {
-  display: flex;
-  justify-content: space-around;
-  padding: 1em;
-  background-color: #fbe4c8;
-}
-
-.features div {
-  max-width: 200px;
-  text-align: center;
-}
-
-footer {
-  background-color: #a1764f;
-  color: white;
-  text-align: center;
-  padding: 1em;
-}
-
-:root {
-  --lake-blue: #2b7a78;
-  --sand: #f4f1de;
-  --stone-gray: #3a3a3a;
-  --accent-gold: #c99c33;
-}
-
-
-header, footer {
-  background-color: var(--lake-blue);
-  color: white;
-}
-
-.hero {
-  background: url('charvak-hero.jpg') center/cover no-repeat;
-}
-
-.features {
-  background-color: var(--accent-gold);
-  color: white;
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
 }

@@ -1,0 +1,14 @@
+{% extends 'firstApp/base.html' %}
+{% block content %}
+<article>
+  <h2>{{ food.name }}</h2>
+  <div class="card-image" style="max-width:400px; margin-bottom:1rem;">
+    <img src="{{ food.image.url }}" alt="{{ food.name }}">
+  </div>
+  <p>{{ food.description }}</p>
+  <p><strong>Price:</strong> ${{ food.price }}</p>
+  <p><strong>Chef:</strong> <a href="{% url 'firstApp:chef_detail' food.chef.pk %}">{{ food.chef }}</a></p>
+  <p><strong>Category:</strong> <a href="{% url 'firstApp:category_detail' food.category.pk %}">{{ food.category.name }}</a></p>
+  <p><strong>Status:</strong> {% if food.is_available %}Available{% else %}Unavailable{% endif %}</p>
+</article>
+{% endblock %}

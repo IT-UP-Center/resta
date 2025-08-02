@@ -1,0 +1,24 @@
+{% extends 'firstApp/base.html' %}
+{% block content %}
+<section>
+  <h2>All Foods by Category</h2>
+  {% for category in categories %}
+    <h3>{{ category.name }}</h3>
+    <div class="grid">
+      {% for food in category.foods.all %}
+        <div class="card">
+          <a href="{% url 'firstApp:food_detail' food.pk %}">
+            <div class="card-image">
+              <img src="{{ food.image.url }}" alt="{{ food.name }}">
+            </div>
+            <div class="card-content">
+              <h4>{{ food.name }}</h4>
+              <p>${{ food.price }}</p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</section>
+{% endblock %}
