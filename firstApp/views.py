@@ -39,3 +39,7 @@ class ChefDetailView(DetailView):
     model = Chef
     template_name = 'firstApp/chef_detail.html'
     context_object_name = 'chef'
+
+
+class About(TemplateView):
+    template_name = 'firstApp/about.html'
