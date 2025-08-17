@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% extends 'firstApp/base.html' %}
+{% load static %}
+
+{% block content %}
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Charvak Delights</h1>
+      <p>Discover authentic Uzbek cuisine with scenic views of Charvak Reservoir.</p>
+        <img src="{% static 'firstApp/charvak.png' %}" width="50%" alt="Charvak Front">
+    </div>
+  </section>
+{% endblock %}
+
+</body>
+</html>
